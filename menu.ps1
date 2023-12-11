@@ -1,11 +1,12 @@
 ﻿do {
-    Write-Host "1. Navegar a path/to/my/projects"
+    Write-Host "1. Navegar al directorio del proyecto"
     Write-Host "0. Salir"
 
     $input = Read-Host "Por favor, elige una opción"
     switch ($input) {
         '1' {
-            Set-Location -Path 'C:\Users\Gerardo\Proyectos'
+            $path = Get-Content 'config.txt'
+            Set-Location -Path $path
             Write-Host (Get-Location).Path
         }
         '0' {
